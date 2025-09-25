@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Portal</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to apply the Inter font family and theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* A dark slate blue background */
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 left-0 right-0 z-50 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">
+                <span class="text-indigo-400">Smart</span>Events
+            </a>
+            <nav>
+                <a href="index.html" class="hover:text-indigo-400 transition-colors duration-300">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 flex items-center justify-center" style="min-height: calc(100vh - 140px);">
+        
+        <!-- Admin Login Form Section -->
+        <section id="admin-login" class="my-12 w-full">
+            <div class="max-w-md mx-auto bg-slate-800 p-8 rounded-lg border border-slate-700 shadow-xl">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-white">Admin Login Portal</h1>
+                    <p class="text-slate-400">Please login to continue.</p>
+                </div>
+                <!-- Error Message Placeholder -->
+                <div id="error-message" class="hidden bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded-lg relative mb-6" role="alert">
+                    <strong class="font-bold">Error:</strong>
+                    <span class="block sm:inline">Invalid credentials. Please try again.</span>
+                </div>
+                <form class="login-form">
+                    <div class="mb-6">
+                        <label for="admin-id" class="block mb-2 text-sm font-medium text-slate-300">Admin ID</label>
+                        <input type="text" id="admin-id" name="admin-id" placeholder="Enter your admin ID" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                    </div>
+                    <div class="mb-6">
+                        <label for="admin-password" class="block mb-2 text-sm font-medium text-slate-300">Password</label>
+                        <input type="password" id="admin-password" name="admin-password" placeholder="••••••••••••" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-lg mt-4">Login</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 border-t border-slate-700">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 SmartEvents. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('admin-id').value.trim();
+            const pass = document.getElementById('admin-password').value.trim();
+            const errorMessage = document.getElementById('error-message');
+            
+            if (id === "Aissms@2025" && pass === "pass@123") {
+                // Hide error message on successful login
+                errorMessage.classList.add('hidden'); 
+                window.location.href = "3.html";
+            } else {
+                // Show the themed error message
+                errorMessage.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

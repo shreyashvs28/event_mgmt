@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Event Registrations - Admin Panel</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to apply the Inter font family and theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* A dark slate blue background */
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 left-0 right-0 z-50 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">
+                <span class="text-indigo-400">Smart</span>Events
+            </a>
+            <nav>
+                <a href="2.html" class="hover:text-indigo-400 transition-colors duration-300">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="bg-slate-800 p-6 sm:p-8 rounded-lg border border-slate-700 shadow-xl">
+            <!-- Header for the panel -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-white">Admin Panel</h1>
+                <p class="text-slate-400">Student Event Registrations</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="flex items-center gap-4 mb-6">
+                <label for="eventFilter" class="block text-sm font-medium text-slate-300">Filter by Event:</label>
+                <select id="eventFilter" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block p-2.5">
+                    <option value="All">All Events</option>
+                    <option value="Catering">Catering</option>
+                    <option value="Conferences">Conferences</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Decor">Decor</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Exhibitions">Exhibitions</option>
+                    <option value="Workshops">Workshops</option>
+                    <option value="Seminars">Seminars</option>
+                    <option value="Sports">Sports</option>
+                </select>
+            </div>
+            
+            <!-- Registrations Table -->
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table id="studentsTable" class="w-full text-sm text-left text-slate-400">
+                    <thead class="text-xs text-slate-300 uppercase bg-slate-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Student Name</th>
+                            <th scope="col" class="px-6 py-3">Student ID</th>
+                            <th scope="col" class="px-6 py-3">Email</th>
+                            <th scope="col" class="px-6 py-3">Mobile No.</th>
+                            <th scope="col" class="px-6 py-3">Event</th>
+                            <th scope="col" class="px-6 py-3">Status</th>
+                            <th scope="col" class="px-6 py-3 text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-700 mt-12">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 SmartEvents. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Sample data (replace with backend data in production)
+        let students = [
+            { name: "Aarav Sharma", id: "STU001", email: "aarav@gmail.com", mobile: "9876543210", event: "Catering", status: "Pending" },
+            { name: "Priya Verma", id: "STU002", email: "priya@gmail.com", mobile: "9876543211", event: "Conferences", status: "Pending" },
+            { name: "Rohan Patel", id: "STU003", email: "rohan@gmail.com", mobile: "9876543212", event: "Corporate", status: "Approved" },
+            { name: "Sneha Singh", id: "STU004", email: "sneha@gmail.com", mobile: "9876543213", event: "Decor", status: "Rejected" },
+            { name: "Ankit Mehra", id: "STU005", email: "ankit@gmail.com", mobile: "9876543214", event: "Entertainment", status: "Pending" },
+            { name: "Isha Jain", id: "STU006", email: "isha@gmail.com", mobile: "9876543215", event: "Exhibitions", status: "Approved" },
+            { name: "Rahul Gupta", id: "STU007", email: "rahul@gmail.com", mobile: "9876543216", event: "Workshops", status: "Pending" },
+            { name: "Meera Nair", id: "STU008", email: "meera@gmail.com", mobile: "9876543217", event: "Seminars", status: "Rejected" },
+            { name: "Vikas Kumar", id: "STU009", email: "vikas@gmail.com", mobile: "9876543218", event: "Sports", status: "Pending" }
+        ];
+
+        function renderTable(filterEvent = "All") {
+            const tbody = document.querySelector("#studentsTable tbody");
+            tbody.innerHTML = "";
+            let filtered = filterEvent === "All" ? students : students.filter(s => s.event === filterEvent);
+            
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr class="bg-slate-800"><td colspan="7" class="text-center py-4 text-slate-500">No registrations found for this event.</td></tr>`;
+                return;
+            }
+
+            const statusClasses = {
+                Pending: 'bg-yellow-900/50 text-yellow-300',
+                Approved: 'bg-green-900/50 text-green-300',
+                Rejected: 'bg-red-900/50 text-red-300'
+            };
+
+            filtered.forEach((student, idx) => {
+                const originalIndex = students.findIndex(s => s.id === student.id);
+                const row = document.createElement('tr');
+                row.className = "bg-slate-800 border-b border-slate-700 hover:bg-slate-600/50";
+                
+                row.innerHTML = `
+                    <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">${student.name}</th>
+                    <td class="px-6 py-4">${student.id}</td>
+                    <td class="px-6 py-4">${student.email}</td>
+                    <td class="px-6 py-4">${student.mobile}</td>
+                    <td class="px-6 py-4">${student.event}</td>
+                    <td class="px-6 py-4">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClasses[student.status] || ''}">${student.status}</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <div class="flex justify-center gap-2">
+                            <button class="font-medium text-green-400 hover:text-green-300 disabled:text-slate-500 disabled:cursor-not-allowed" onclick="updateStatus(${originalIndex}, 'Approved')" ${student.status === 'Approved' ? 'disabled' : ''}>Approve</button>
+                            <button class="font-medium text-red-400 hover:text-red-300 disabled:text-slate-500 disabled:cursor-not-allowed" onclick="updateStatus(${originalIndex}, 'Rejected')" ${student.status === 'Rejected' ? 'disabled' : ''}>Reject</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function updateStatus(originalIndex, newStatus) {
+            students[originalIndex].status = newStatus;
+            renderTable(document.getElementById('eventFilter').value);
+        }
+
+        document.getElementById('eventFilter').addEventListener('change', function() {
+            renderTable(this.value);
+        });
+        
+        // Initial render
+        renderTable();
+    </script>
+</body>
+</html>

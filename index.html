@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart College Event Management System</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to apply the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* A dark slate blue background */
+        }
+        /* Custom gradient for the hero section */
+        .hero-gradient {
+            background: radial-gradient(circle at top, rgba(30, 41, 59, 0.8), #0f172a), url('https://placehold.co/1920x1080/0f172a/334155?text=College+Campus') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-slate-900/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">
+                <span class="text-indigo-400">Smart</span>Events
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-indigo-400 transition-colors duration-300">Home</a>
+                <a href="#features" class="hover:text-indigo-400 transition-colors duration-300">Features</a>
+                <a href="#team" class="hover:text-indigo-400 transition-colors duration-300">About</a>
+                <a href="#contact" class="hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <!-- Mobile menu button can be added here -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center hero-gradient pt-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Efficient College <span class="block">Event Management</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                    Welcome to <span class="font-semibold text-indigo-400">SmartEvents</span>, the ultimate platform to streamline, optimize, and celebrate your college events.
+                    <br>
+                    <span class="font-medium text-white">Plan smarter. Engage better. Succeed together.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="student-login bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-lg">
+                        STUDENT LOGIN
+                    </button>
+                    <button class="admin-login bg-slate-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-600 transition-transform transform hover:scale-105 shadow-lg">
+                        ADMIN LOGIN
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The All-in-One Event Platform</h2>
+                        <p class="text-slate-400 text-lg">
+                            Simplify and enhance your college event planning with our comprehensive management system. 
+                            <span class="block mt-2 font-semibold text-indigo-400">From planning to execution, we empower your success.</span>
+                        </p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <!-- Feature Card 1 -->
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                            <h3 class="text-xl font-bold text-white mb-2">Streamline Planning</h3>
+                            <p class="text-slate-400">Organize and coordinate all aspects of your events in one centralized platform.</p>
+                        </div>
+                        <!-- Feature Card 2 -->
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                            <h3 class="text-xl font-bold text-white mb-2">Automate Tasks</h3>
+                            <p class="text-slate-400">Save time with automated scheduling, notifications, and attendee lists.</p>
+                        </div>
+                        <!-- Feature Card 3 -->
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                            <h3 class="text-xl font-bold text-white mb-2">Enhance Communication</h3>
+                            <p class="text-slate-400">Improve collaboration among organizers, participants, and stakeholders.</p>
+                        </div>
+                        <!-- Feature Card 4 -->
+                        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                            <h3 class="text-xl font-bold text-white mb-2">Customizable Solutions</h3>
+                            <p class="text-slate-400">Tailor the system to your college's specific needs and requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <p class="text-2xl md:text-3xl font-medium text-white italic">
+                        "SmartEvents has revolutionized the way we plan and execute college events. It's an absolute game-changer for our institution."
+                    </p>
+                    <p class="mt-6 text-xl font-bold text-indigo-400">&mdash; Aria Adams, Event Coordinator</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dedicated Team Section -->
+        <section id="team" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Meet Our Dedicated Team</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <!-- Team Member 1 -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/400x400/6366f1/e0e7ff?text=MS" alt="Mayur Saitwal" class="w-32 h-32 rounded-full mb-4 border-4 border-slate-700 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">Mayur Saitwal</h3>
+                        <p class="text-indigo-400">Frontend Developer</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/400x400/6366f1/e0e7ff?text=SS" alt="Shreyash Shinde" class="w-32 h-32 rounded-full mb-4 border-4 border-slate-700 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">Shreyash Shinde</h3>
+                        <p class="text-indigo-400">Backend Developer</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/400x400/6366f1/e0e7ff?text=MP" alt="Manas Patil" class="w-32 h-32 rounded-full mb-4 border-4 border-slate-700 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">Manas Patil</h3>
+                        <p class="text-indigo-400">Database Handling</p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="flex flex-col items-center">
+                        <img src="https://placehold.co/400x400/6366f1/e0e7ff?text=AS" alt="Akash Sudrik" class="w-32 h-32 rounded-full mb-4 border-4 border-slate-700 shadow-lg">
+                        <h3 class="text-xl font-bold text-white">Akash Sudrik</h3>
+                        <p class="text-indigo-400">API's Handling & Testing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="bg-indigo-600 rounded-lg shadow-xl p-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Optimize Your College Events Today</h2>
+                    <p class="text-indigo-200 text-lg max-w-2xl mx-auto mb-8">
+                        Join other leading institutions who have transformed their event planning process. Get started in minutes.
+                    </p>
+                    <button class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-transform transform hover:scale-105">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 border-t border-slate-700">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p class="text-lg font-semibold mb-4 text-white">Contact Us</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-indigo-400 transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:text-indigo-400 transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.855 2.01-.855 3.17 0 2.188 1.115 4.117 2.823 5.247a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.058 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-indigo-400 transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.567 5.782 2.295 7.148 2.233 8.414 2.175 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.373C2.013 5.668 2 6.077 2 12c0 5.923.013 6.332.072 7.613.059 1.281.292 2.393 1.272 3.373.98.98 2.092 1.213 3.373 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.292 3.373-1.272.98-.98 1.213-2.092 1.272-3.373.059-1.281.072-1.69.072-7.613 0-5.923-.013-6.332-.072-7.613-.059-1.281-.292-2.393-1.272-3.373-.98-.98-2.092-1.213-3.373-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                </a>
+            </div>
+            <p>&copy; 2024 SmartEvents. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Directs the user to the respective login pages upon button click.
+        document.querySelector('button.student-login').addEventListener('click', () => {
+            window.location.href = "1.html";
+        });
+
+        document.querySelector('button.admin-login').addEventListener('click', () => {
+            window.location.href = "2.html";
+        });
+    </script>
+</body>
+</html>
+

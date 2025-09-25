@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Event Registration Portal</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to apply the Inter font family and theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* A dark slate blue background */
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header and Navigation Bar -->
+    <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 left-0 right-0 z-50 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">
+                <span class="text-indigo-400">Smart</span>Events
+            </a>
+            <nav>
+                <a href="index.html" class="hover:text-indigo-400 transition-colors duration-300">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        
+        <!-- Registration Form Section -->
+        <section id="registration" class="my-12">
+            <div class="max-w-2xl mx-auto bg-slate-800 p-8 rounded-lg border border-slate-700 shadow-xl">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-white">Student Registration Portal</h1>
+                    <p class="text-slate-400">Fill out the details below to register for an event.</p>
+                </div>
+                <form>
+                    <div class="mb-4">
+                        <label for="event-select" class="block mb-2 text-sm font-medium text-slate-300">Event to Register</label>
+                        <select id="event-select" name="event-select" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                            <option value="" disabled selected>Select an event</option>
+                            <option value="Catering">Catering</option>
+                            <option value="Conferences">Conferences</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Decor">Decor</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Exhibitions">Exhibitions</option>
+                        </select>
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                        <div class="mb-4">
+                            <label for="student-name" class="block mb-2 text-sm font-medium text-slate-300">Full Name</label>
+                            <input type="text" id="student-name" name="student-name" placeholder="Enter your name" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                        </div>
+                        <div class="mb-4">
+                            <label for="student-id" class="block mb-2 text-sm font-medium text-slate-300">Student ID</label>
+                            <input type="text" id="student-id" name="student-id" placeholder="Enter your student ID" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                        </div>
+                    </div>
+                     <div class="mb-4">
+                        <label for="student-email" class="block mb-2 text-sm font-medium text-slate-300">Email Address</label>
+                        <input type="email" id="student-email" name="student-email" placeholder="Enter your email" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                    </div>
+                     <div class="mb-4">
+                        <label for="student-phone" class="block mb-2 text-sm font-medium text-slate-300">Phone Number</label>
+                        <input type="tel" id="student-phone" name="student-phone" placeholder="Enter your phone number" pattern="[0-9]{10,15}" required class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-lg mt-4">Register Now</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Our Services Section -->
+        <section id="services" class="py-20">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Transforming Events into Memorable Moments</h2>
+                <p class="text-slate-400 text-lg max-w-3xl mx-auto">Creating unforgettable experiences that bring people together. Explore our services.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- Service Card -->
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-white">Hackathon</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-white">Conferences</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-white">Corporate</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-white">Decor</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-white">Entertainment</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 text-center hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-xl font-bold text-white">Workshops</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glimpses Section -->
+        <section id="gallery" class="py-20">
+             <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Event Glimpses</h2>
+                <p class="text-slate-400 text-lg max-w-3xl mx-auto">A look back at our memorable moments.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://placehold.co/600x400/0f172a/6366f1?text=Event+1" alt="Event Glimpse">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://placehold.co/600x400/0f172a/6366f1?text=Event+2" alt="Event Glimpse">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://placehold.co/600x400/0f172a/6366f1?text=Event+3" alt="Event Glimpse">
+                </div>
+                 <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://placehold.co/600x400/0f172a/6366f1?text=Event+4" alt="Event Glimpse">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://placehold.co/600x400/0f172a/6366f1?text=Event+5" alt="Event Glimpse">
+                </div>
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="https://placehold.co/600x400/0f172a/6366f1?text=Event+6" alt="Event Glimpse">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 border-t border-slate-700">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 SmartEvents. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
